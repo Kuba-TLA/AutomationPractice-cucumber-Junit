@@ -22,7 +22,7 @@ public class HomeSteps {
 
     @When("I click Saucedemo link text")
     public void i_click_saucedemo_link_text() {
-
+        impl.openLinkInNewWindowAndSwitch("Saucedemo");
     }
 
     @Then("Title of the page should be Swag Labs")

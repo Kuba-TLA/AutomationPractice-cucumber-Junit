@@ -4,6 +4,8 @@ import pages.HomePage;
 import utils.ConfigReader;
 import utils.WebDriverUtils;
 
+import java.util.Set;
+
 public class HomeImpl {
     HomePage page;
 
@@ -23,6 +25,11 @@ public class HomeImpl {
             break;
             default:
                 System.out.println("Invalid link text");
+        }
+
+        for(String eachWindow: WebDriverUtils.getDriver().getWindowHandles()){
+            if(!eachWindow.equals(WebDriverUtils.getDriver().getWindowHandle()))
+                WebDriverUtils.getDriver().switchTo().window(eachWindow);
         }
     }
 

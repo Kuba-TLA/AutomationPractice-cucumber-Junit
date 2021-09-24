@@ -5,3 +5,4 @@ Feature: Home page scenarios
     Then I should be able to see Saucedemo link text
     When I click Saucedemo link text
     Then Title of the page should be Swag Labs
+
