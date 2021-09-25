@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
         "rerun:target/failed-scenarios/homeRunner.txt"},
         features = "src/main/resources/features/home.feature",
         glue = {"steps"},
-        stepNotifications = true
+        stepNotifications = true,
+        tags = "@tempTest"
 )
 public class HomeRunner {
 }

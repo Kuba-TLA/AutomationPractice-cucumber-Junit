@@ -1,5 +1,6 @@
 Feature: Database page tests
 
+  @db @smoke
   Scenario: Verify title is User DB
     Given I navigate to homepage
     When I open User-Mgt page

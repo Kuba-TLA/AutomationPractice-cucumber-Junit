@@ -6,6 +6,7 @@ Feature: Login page steps
     And I click on "Login" button
     Then Title of the page should be "Login Page"
 
+    @smoke @regression @loginPage
   Scenario: Verify TLA logo is displayed
     Given I navigate to homepage
     When I open User-Mgt page

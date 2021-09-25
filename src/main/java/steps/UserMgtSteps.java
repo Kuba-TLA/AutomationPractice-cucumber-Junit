@@ -24,4 +24,14 @@ public class UserMgtSteps {
     public void i_should_see_access_db_button() {
         Assert.assertTrue(impl.getPage().accessDbBtn.isEnabled());
     }
+
+    @When("I input {string} as {string}")
+    public void iInputAs(String inputFieldName, String value) {
+        impl.fillInputField(inputFieldName, value);
+    }
+
+    @Then("I should see all fields displayed on user table")
+    public void iShouldSeeAllFieldsDisplayedOnUserTable() {
+        Assert.assertEquals("success", impl.verifyEachUserFields());
+    }
 }
