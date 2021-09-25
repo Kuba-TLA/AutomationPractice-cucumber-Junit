@@ -12,4 +12,13 @@ public class HomePage {
 
     @FindBy(linkText = "Saucedemo")
     public WebElement sauceDemoLink;
+
+    @FindBy(linkText = "E-commerce")
+    public WebElement ecommerceLink;
+
+    @FindBy(linkText = "Shopping Cart")
+    public WebElement shoppingCartLink;
+
+    @FindBy(linkText = "PHP Travels")
+    public WebElement phpTravelsLink;
 }
