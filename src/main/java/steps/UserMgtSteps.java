@@ -14,10 +14,6 @@ public class UserMgtSteps {
         impl.getPage().userMgtLink.click();
     }
 
-    @Then("Title of the page should be Register New User")
-    public void title_of_the_page_should_be_register_new_user() {
-        Assert.assertEquals("Register New User", WebDriverUtils.getDriver().getTitle());
-    }
 
     @Then("I should see Login button")
     public void i_should_see_login_button() {

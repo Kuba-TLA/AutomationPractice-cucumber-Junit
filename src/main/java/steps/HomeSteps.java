@@ -1,7 +1,6 @@
 package steps;
 
 import impl.HomeImpl;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,14 +21,14 @@ public class HomeSteps {
         Assert.assertEquals(linkText, actualText);
     }
 
-    @When("I click Saucedemo link text")
-    public void i_click_saucedemo_link_text() {
-        impl.openLinkInNewWindowAndSwitch("Saucedemo");
+    @When("I click {string} link text")
+    public void i_click_saucedemo_link_text(String linkText) {
+        impl.openLinkInNewWindowAndSwitch(linkText);
     }
 
-    @Then("Title of the page should be Swag Labs")
-    public void i_should_see_swag_labs_title() {
-        Assert.assertEquals("Swag Labs", WebDriverUtils.getDriver().getTitle());
+    @Then("Title of the page should be {string}")
+    public void i_should_see_swag_labs_title(String expectedTitle) {
+        Assert.assertEquals(expectedTitle, WebDriverUtils.getDriver().getTitle());
     }
 
 

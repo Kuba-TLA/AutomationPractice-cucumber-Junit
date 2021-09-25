@@ -2,22 +2,21 @@ package steps;
 
 import impl.DatabaseImpl;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import utils.SeleniumUtils;
-import utils.WebDriverUtils;
 
 public class DatabaseSteps {
     DatabaseImpl impl = new DatabaseImpl();
 
-    @And("I click on Access DB button")
-    public void iClickOnAccessDBButton() {
-        impl.getUserMgtPage().accessDbBtn.click();
-    }
-
-    @Then("Title of the page should be User DB")
-    public void titleOfThePageShouldBeUserDB() {
+    @And("I click on {string} button")
+    public void iClickOnButton(String buttonName) {
+        switch (buttonName.toLowerCase()){
+            case "access db": impl.getUserMgtPage().accessDbBtn.click();
+            break;
+            case "login": impl.getUserMgtPage().loginBtn.click();
+            break;
+            default:
+                System.out.println("button was not found");
+        }
         SeleniumUtils.switchToNextWindow();
-        Assert.assertEquals("User DB", WebDriverUtils.getDriver().getTitle());
     }
 }

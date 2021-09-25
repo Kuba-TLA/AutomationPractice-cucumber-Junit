@@ -1,6 +1,5 @@
 package impl;
 
-import pages.DatabasePage;
 import pages.LoginPage;
 import pages.UserMgtPage;
 
@@ -20,4 +19,14 @@ public class LoginImpl {
         return userMgtPage;
     }
 
+    public String getImageSrcValue(String imgName){
+        String imageSrc = "";
+        switch (imgName.toLowerCase()){
+            case "tla logo": imageSrc = getPage().tlaLogo.getAttribute("src");
+                break;
+            default:
+                System.out.println("image was not found");
+        }
+        return imageSrc;
+    }
 }

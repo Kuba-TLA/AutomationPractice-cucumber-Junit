@@ -22,7 +22,11 @@ public class HomeImpl {
     public void openLinkInNewWindowAndSwitch(String linkText){
         switch (linkText.toLowerCase()){
             case "saucedemo": getPage().sauceDemoLink.click();
-            break;
+                break;
+            case "e-commerce": getPage().ecommerceLink.click();
+                break;
+            case "shopping cart": getPage().shoppingCartLink.click();
+                break;
             default:
                 System.out.println("Invalid link text");
         }
