@@ -44,17 +44,18 @@ public class UserMgtImpl {
     public String verifyEachUserFields(){
         String result = "success";
 
-        List<WebElement> allCells = getPage().userTableRows.get(0).findElements(By.xpath(".//td"));
+        List<WebElement> allTds = getPage().userTableRows.findElements(By.xpath(".//td"));
+
         for(String eachField: userFieldInputsMap.keySet()){
             boolean missing = true;
-            for(int i = 0; i < allCells.size(); i++){
-                if(allCells.get(i).getText().equals(eachField)){
+            for(int i = 0; i < allTds.size(); i++){
+                if(allTds.get(i).getText().equals(userFieldInputsMap.get(eachField))){
                     missing = false;
+                    break;
                 }
             }
-            if (missing){
+            if (missing)
                 result = "fail";
-            }
         }
         return result;
     }

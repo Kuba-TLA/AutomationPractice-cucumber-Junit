@@ -12,6 +12,8 @@ public class WebDriverUtils {
     //singleton WebDriver
     private static WebDriver driver = null;
 
+    private WebDriverUtils(){}
+
     public static WebDriver getDriver(){
         if(driver == null)
             initializeDriver();

@@ -4,7 +4,8 @@ import impl.UserMgtImpl;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import utils.WebDriverUtils;
+
+import java.util.Map;
 
 public class UserMgtSteps {
     UserMgtImpl impl = new UserMgtImpl();
@@ -30,8 +31,17 @@ public class UserMgtSteps {
         impl.fillInputField(inputFieldName, value);
     }
 
+    @When("I input following user details:")
+    public void iInputFollowingUserDetails(Map<String, String> map) {
+        for(String key: map.keySet()){
+            impl.fillInputField(key, map.get(key));
+        }
+    }
+
     @Then("I should see all fields displayed on user table")
     public void iShouldSeeAllFieldsDisplayedOnUserTable() {
         Assert.assertEquals("success", impl.verifyEachUserFields());
     }
+
+
 }

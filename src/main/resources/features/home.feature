@@ -1,4 +1,5 @@
 Feature: Home page scenarios
+
   Background:
     Given I navigate to homepage
 
@@ -19,4 +20,14 @@ Feature: Home page scenarios
     When I click "Shopping Cart" link text
     Then Title of the page should be "React Shopping Cart"
 
+    @scenarioOutline
+  Scenario Outline: Verify all following link texts open expected web page
+    Then I should be able to see "<link name>" link text
+    When I click "<link text>" link text
+    Then Title of the page should be "<page title>"
+    Examples:
+      | link name     | link text     | page title          |
+      | Saucedemo     | Saucedemo     | Swag Labs           |
+      | E-commerce    | E-commerce    | My Store            |
+      | Shopping Cart | Shopping Cart | React Shopping Cart |
 

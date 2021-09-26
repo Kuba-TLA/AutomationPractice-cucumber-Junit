@@ -40,5 +40,5 @@ public class UserMgtPage {
     public WebElement submitBtn;
 
     @FindBy(xpath = "//table[@id='list-table']/tbody/tr")
-    public List<WebElement> userTableRows;
+    public WebElement userTableRows;
 }

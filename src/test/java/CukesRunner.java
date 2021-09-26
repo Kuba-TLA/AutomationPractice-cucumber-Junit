@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
         "rerun:target/failed-scenarios/cukes.txt"},
         features = "src/main/resources/features",
         glue = {"steps"},
-        stepNotifications = true
+        stepNotifications = true,
+        tags = "@user-mgt"
 )
 public class CukesRunner {
 }

@@ -1,4 +1,6 @@
+@user-mgt
 Feature: User Management page scenarios
+
   Background:
     Given I navigate to homepage
     When I open User-Mgt page
@@ -20,5 +22,15 @@ Feature: User Management page scenarios
     And I input "phone number" as "333-333-3333"
     And I input "email" as "kz@test.com"
     And I input "role" as "Instructor"
+    And I click on "Submit" button
+    Then I should see all fields displayed on user table
+
+  Scenario: Verify user registration form with Cucumber Data Table
+    When I input following user details:
+      | firstname    | Jack         |
+      | lastname     | Z            |
+      | phone number | 333-333-3333 |
+      | email        | kz@test.com  |
+      | role         | Instructor   |
     And I click on "Submit" button
     Then I should see all fields displayed on user table
