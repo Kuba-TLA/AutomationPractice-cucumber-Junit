@@ -3,6 +3,7 @@ Feature: Home page scenarios
   Background:
     Given I navigate to homepage
 
+    @logPass
   Scenario: Verify saucedemo link text
     Then I should be able to see "Saucedemo" link text
     When I click "Saucedemo" link text
@@ -31,3 +32,31 @@ Feature: Home page scenarios
       | E-commerce    | E-commerce    | My Store            |
       | Shopping Cart | Shopping Cart | React Shopping Cart |
 
+  @navigation @single
+  Scenario: Verify nav button is enabled
+    Then I verify "Files" button is enabled
+    Then I verify "iFrame" button is enabled
+    Then I verify "Notes" button is enabled
+    Then I verify "Home" button is enabled
+
+  @navigation
+  Scenario: Verify nav button is enabled
+    Then I verify "Home" button is enabled
+
+  @navigation
+  Scenario: Verify nav button is enabled
+    Then I verify "Notes" button is enabled
+
+  @navigation
+  Scenario: Verify nav button is enabled
+    Then I verify "iFrame" button is enabled
+
+  @navigation @scenarioOutline
+  Scenario Outline: Verify nav button is enabled
+    Then I verify "<button name>" button is enabled
+    Examples:
+    |button name|
+    |Home       |
+    |Notes      |
+    |iFrame     |
+    |Files      |

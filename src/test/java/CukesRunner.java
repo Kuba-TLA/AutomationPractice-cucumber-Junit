@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/main/resources/features",
         glue = {"steps"},
         stepNotifications = true,
-        tags = "@user-mgt"
+        tags = "@logPass"
 )
 public class CukesRunner {
 }

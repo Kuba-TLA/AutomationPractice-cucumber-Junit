@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/main/resources/features/home.feature",
         glue = {"steps"},
         stepNotifications = true,
-        tags = "@scenarioOutline"
+        tags = "@navigation and @scenarioOutline"
 )
 public class HomeRunner {
 }

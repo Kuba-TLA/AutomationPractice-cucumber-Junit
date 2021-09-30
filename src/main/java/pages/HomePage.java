@@ -21,4 +21,18 @@ public class HomePage {
 
     @FindBy(linkText = "PHP Travels")
     public WebElement phpTravelsLink;
+
+    @FindBy(linkText = "Files")
+    public WebElement filesBtn;
+
+    @FindBy(linkText = "Home")
+    public WebElement homeBtn;
+
+    @FindBy(linkText = "Notes")
+    public WebElement notesBtn;
+
+    @FindBy(linkText = "iFrames")
+    public WebElement iframesBtn;
+
+
 }
