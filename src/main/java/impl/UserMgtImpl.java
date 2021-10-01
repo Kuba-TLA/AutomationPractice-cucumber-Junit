@@ -3,8 +3,10 @@ package impl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.UserMgtPage;
+import pojos.User;
 import utils.SeleniumUtils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,7 @@ public class UserMgtImpl {
     }
 
     Map<String, String> userFieldInputsMap = new HashMap<>();
+    List<User> allUsers = new ArrayList<>();
 
     public void fillInputField(String inputFieldName, String value){
         switch (inputFieldName.toLowerCase()){
@@ -39,6 +42,17 @@ public class UserMgtImpl {
         }
 
         userFieldInputsMap.put(inputFieldName, value);
+    }
+
+    public void addNewUser(User user){
+        getPage().firstNameInput.sendKeys(user.getFirstName());
+        getPage().lastNameInput.sendKeys(user.getLastName());
+        getPage().phoneInput.sendKeys(user.getPhoneNumber());
+        getPage().emailInput.sendKeys(user.getEmail());
+        SeleniumUtils.selectByVisibleText(getPage().selectRole, user.getRole());
+        getPage().submitBtn.click();
+
+        allUsers.add(user);
     }
 
     public String verifyEachUserFields(){
