@@ -43,3 +43,4 @@ Feature: User Management page scenarios
       | Jack      | Great    | 222         | jack@test.com  | Student    |
       | Silva     | Blue     | 333         | silva@test.com | Instructor |
       | Rose      | Gold     | 444         | rose@test.com  | Mentor     |
+
