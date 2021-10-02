@@ -20,6 +20,7 @@ Feature: Login page steps
     When I input "username" as "Jack" in input field
     When I input "password" as "Jack123" in input field
 
+  @typeRegistry @pojo
   Scenario: Verify multiple credentials' login
     Given I navigate to homepage
     When I open "User-Mgt" page

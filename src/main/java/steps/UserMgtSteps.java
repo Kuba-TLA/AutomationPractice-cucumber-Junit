@@ -53,11 +53,15 @@ public class UserMgtSteps {
         }
     }
 
+    @When("I create users from {string} sheet in {string} file")
+    public void iCreateUsersFromSheetInFile(String sheetName, String fileName) {
+        impl.addNewUserFromExcelFile(sheetName, fileName);
+    }
+
     @Then("I should see all fields displayed on user table")
     public void iShouldSeeAllFieldsDisplayedOnUserTable() {
         Assert.assertEquals("success", impl.verifyEachUserFields());
     }
-
 
 
 }

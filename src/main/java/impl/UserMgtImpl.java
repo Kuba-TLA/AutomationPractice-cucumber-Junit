@@ -4,8 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.UserMgtPage;
 import pojos.User;
+import utils.ExcelUtils;
 import utils.SeleniumUtils;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +56,21 @@ public class UserMgtImpl {
 
         allUsers.add(user);
     }
+
+    public void addNewUserFromExcelFile(String sheetName, String fileName){
+        ArrayList<ArrayList<String>> allUsers = ExcelUtils.readRows(sheetName, fileName);
+
+        for(int i = 1; i < allUsers.size(); i++){
+            getPage().firstNameInput.sendKeys(allUsers.get(i).get(0));
+            getPage().lastNameInput.sendKeys(allUsers.get(i).get(1));
+            getPage().phoneInput.sendKeys(allUsers.get(i).get(2));
+            getPage().emailInput.sendKeys(allUsers.get(i).get(3));
+            SeleniumUtils.selectByVisibleText(getPage().selectRole, allUsers.get(i).get(4));
+            getPage().submitBtn.click();
+        }
+    }
+
+
 
     public String verifyEachUserFields(){
         String result = "success";

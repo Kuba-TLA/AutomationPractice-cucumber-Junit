@@ -1,6 +1,5 @@
 package impl;
 
-import jdk.internal.util.xml.impl.Input;
 import pages.DatabasePage;
 import pages.InputsPage;
 import pages.UserMgtPage;

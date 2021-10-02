@@ -62,8 +62,11 @@ public class LoginSteps implements CommonPage {
                 e.printStackTrace();
             }
 
+            //assertions go here
+
             WebDriverUtils.getDriver().get("http://automation.techleadacademy.io/#/practiceLogin");
             WebDriverUtils.getDriver().navigate().refresh();
+
         }
 
     }

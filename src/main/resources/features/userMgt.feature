@@ -5,6 +5,7 @@ Feature: User Management page scenarios
     Given I navigate to homepage
     When I open "User-Mgt" page
 
+  @runFromCMLine
   Scenario: Verify title of the page
     Then Title of the page should be "Register New User"
 
@@ -37,6 +38,7 @@ Feature: User Management page scenarios
     And I click on "Submit" button
     Then I should see all fields displayed on user table
 
+  @typeRegistry @pojo
   Scenario: Create users using cucumber typeRegistry with POJO class
     When I create following users
       | firstName | lastName | phoneNumber | email          | role       |
@@ -44,3 +46,6 @@ Feature: User Management page scenarios
       | Silva     | Blue     | 333         | silva@test.com | Instructor |
       | Rose      | Gold     | 444         | rose@test.com  | Mentor     |
 
+  @readFromExcel
+  Scenario: Create users using excel file
+    When I create users from "Sheet 1" sheet in "users.xlsx" file
