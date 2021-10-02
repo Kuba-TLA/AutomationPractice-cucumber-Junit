@@ -49,3 +49,7 @@ Feature: User Management page scenarios
   @readFromExcel
   Scenario: Create users using excel file
     When I create users from "Sheet 1" sheet in "users.xlsx" file
+
+  @readFromExcel
+  Scenario: Create users using excel file with random generated user data
+    When I create users from "Test Users" sheet in "newUsers.xlsx" file

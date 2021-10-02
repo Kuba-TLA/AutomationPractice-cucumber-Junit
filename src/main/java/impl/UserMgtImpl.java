@@ -7,7 +7,6 @@ import pojos.User;
 import utils.ExcelUtils;
 import utils.SeleniumUtils;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
