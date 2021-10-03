@@ -11,7 +11,7 @@ Feature: Login page steps
     Given I navigate to homepage
     When I open "User-Mgt" page
     And I click on "Login" button
-    Then Image "TLA logo" should have value "logo.jpeg"
+    Then Image "TLA logo" should have value "logo.jpegX"
 
   Scenario: Input username
     Given I navigate to homepage
