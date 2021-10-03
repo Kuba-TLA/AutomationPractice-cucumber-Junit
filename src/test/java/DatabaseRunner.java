@@ -5,7 +5,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/databaseRunner.html",
-        "rerun:target/failed-scenarios/database.txt"},
+        "rerun:target/failed-scenarios/database.txt",
+        "json:target/dbTestReport.json"},
         features = "src/main/resources/features/database.feature",
         glue = {"steps"},
         stepNotifications = true
